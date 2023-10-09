@@ -1,0 +1,3 @@
+nasm -o mbr mbr.S
+
+dd if=/home/allen/oslib/lib_repo/chapter_2/mbr of=/home/allen/oslib/bochs/hd60M.img bs=512 count=1 conv=notrunc
