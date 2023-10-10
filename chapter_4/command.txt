@@ -1,0 +1,7 @@
+
+nasm -o mbr -I ./include/ mbr.S 
+dd if=mbr of=/home/allen/oslib/bochs/hd60M.img bs=512 count=1 conv=notrunc
+
+
+nasm -o loader -I ./include/ ./loader.S
+dd if=loader of=/home/allen/oslib/bochs/hd60M.img bs=512 count=4 conv=notrunc seek=2
