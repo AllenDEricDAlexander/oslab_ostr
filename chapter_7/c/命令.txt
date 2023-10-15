@@ -1,4 +1,3 @@
-
 编译并写入mbr
 nasm -o build/mbr -I ./boot/include/ boot/mbr.S 
 dd if=build/mbr of=/home/allen/oslib/bochs/hd60M.img bs=512 count=1 conv=notrunc
@@ -27,6 +26,7 @@ gcc-4.4 -m32 -I lib/kernel/ -I lib/ -I kernel/ -I device/ -c -fno-builtin -o bui
 
 链接成内核
 ld -m elf_i386 -Ttext 0x00001500 -e main -o build/kernel.bin  build/main.o build/kernel.o build/init.o build/interrput.o build/print.o
+strip --remove-section=.note.gnu.property build/kernel.bin
 
 写入内核
 dd if=build/kernel.bin of=/home/allen/oslib/bochs/hd60M.img bs=512 count=200 seek=9 conv=notrunc
