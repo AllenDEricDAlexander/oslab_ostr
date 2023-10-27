@@ -12,3 +12,8 @@ The code for this repository has been debugged and can run normally. Suggest fol
 [我也曾在此获得帮助](https://www.kn0sky.com/?p=40)
 
 [I have also received help here](https://www.kn0sky.com/?p=40)
+
+```sh
+bin/bochs -f bochsrc.disk
+```
+
